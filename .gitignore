@@ -5,7 +5,7 @@
 import random
 #Defining a function that will print all the rules of the game
 def print_rules():
-    print("Winning the rules of rock, paper, scissor game are:\n"+"Rock vs paper->paper wins \n"+"Rock vs scissor->Rock wins \n"+"paper vs scissor->scissor wins \n
+    print("Winning the rules of rock, paper, scissor game are:\n"+"Rock vs paper->paper wins \n"+"Rock vs scissor->Rock wins \n"+"paper vs scissor->scissor wins \n")
 #Defining a function that will take user input and will return the choice of the user
 def take_user_input():
     choice=int(input("Enter your choice from \n 1. Rock \n 2. Paper \n 3. Scissor \n"))
