@@ -1,0 +1,82 @@
+#THIS IS THE ROCK PAPER SCISSOR GAME
+
+#In this function 1 means Rock, 2 means Paper, 3 means Scissor
+#Importing the random library
+import random
+#Defining a function that will print all the rules of the game
+def print_rules():
+    print("Winning the rules of rock, paper, scissor game are:\n"+"Rock vs paper->paper wins \n"+"Rock vs scissor->Rock wins \n"+"paper vs scissor->scissor wins \n")
+#Defining a function that will take user input and will return the choice of the user
+def take_user_input():
+    choice=int(input("Enter your choice from \n 1. Rock \n 2. Paper \n 3. Scissor \n"))
+    return choice
+#Now we will make the hardest part of the program
+
+#Defining a variable named run to check that user want's to play the game again
+run=0
+#If the run will be zero the program will run.
+#If the run will be one the program will stop running
+#Defining the while loop to check that the program will run or not
+while run==0:
+#Calling the print_rules() function that will print the rules of the game
+    print_rules()
+#Calling the function take_user_input() that will takes the user input.
+    choice=take_user_input()
+#Checking that the user's choice is between 1 and 3
+    if choice>3 or choice<1:
+        print("Invalid choice! Try again")
+    else:
+#If user's choice is 1 we will assign it to a variable named user_choice as Rock
+        if choice==1:
+            user_choice='Rock'
+#If user's choice is 2 we will assign it to a variable named user_choice as Paper
+        elif choice==2:
+            user_choice='Paper'
+#If user's choice is 3 we will assign it to a variable named user_choice as Scissor
+        else:
+            user_choice="Scissor"
+#Printing the user's choice
+        print("User choice is "+user_choice)
+#Printing that now its computer's turn
+        print("Now its computers turn")
+#Assigning the computers choice to variable named comp_choice.
+#I am using the random.randint() function to take a value among 1,2 and 3.
+        comp_choice=random.randint(1,3)
+#Checking that the computers choice is equals to the choice of the user.
+#If computer's choice is equal to the user's choice than this while loop will continue assigning the value of the computer into the comp_choice variable
+        while comp_choice==choice:
+            comp_choice=random.randint(1,3)
+#If the comp_choice is equal to 1 than comp_choice_name will be equals to Rock
+        if comp_choice==1:
+            comp_choice_name="Rock"
+#If the comp_choice is equal to 2 than comp_choice_name will be equals to Paper
+        elif comp_choice==2:
+            comp_choice_name="Paper"
+#If the comp_choice is equal to 1 than comp_choice_name will be equals to Scissor
+        else:
+            comp_choice_name="Scissor"
+#Printing the computer's choice
+        print(f"Computer choice is {comp_choice}")
+#Printing the user's choice v/s Computer's choice
+        print(user_choice+" V/S "+comp_choice_name)
+#Checking which choice wins
+        if ((choice==2 and comp_choice==1) or (choice==1 and comp_choice==2)):
+            print("Paper wins")
+            result="Paper"
+        elif ((choice==1 and comp_choice==3) or (comp_choice==1 and choice==3)):
+            print("Rock Wins")
+            result="Rock"
+        else:
+            print("Scissor Wins")
+            result="Scissor"
+        if user_choice==result:
+            print("User Wins")
+        else:
+            print("Computer Wins")
+#Taking user's input that he/she want's to play the game again or not
+        game_again=input("Did you want to play again: type y for yes or type n for n=")
+#If user want's to play the game again the variable run will be equals to 0 otherwise variable run will be equals to 1
+        if game_again.lower()=='y':
+            run=0
+        else:
+            run=1
