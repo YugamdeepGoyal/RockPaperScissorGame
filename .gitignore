@@ -1,3 +1,5 @@
+#THIS IS THE ROCK PAPER SCISSOR GAME
+
 #In this function 1 means Rock, 2 means Paper, 3 means Scissor
 #Importing the random library
 import random
